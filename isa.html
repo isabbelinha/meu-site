@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eu e você</title>
+  <style>
+    body {
+     background:linear-gradient(rgb(9, 49, 71));
+    }
+    #contador {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      margin-top: 0px;
+      text-align: center;
+    }
+   
+ .container-imagens {
+  display: flex;            
+  justify-content: center;  
+  gap: 20px;              
+  align-items: center;      
+  
+}
+
+.imagem1 img, .imagem2 img {
+  max-width: 300px;           
+  height: auto;                 
+  display: block;  
+   border: 2px solid black;
+  border-radius: 8px; 
+}
+    #contador button {
+  background-color: #063f80; 
+  border: none; 
+  border-radius: 6px; 
+  padding: 10px 20px; 
+  color: rgb(255, 255, 255); 
+  font-weight: bold;
+  cursor: default;
+  min-width: 80px; 
+  text-align: center; 
+  box-sizing: border-box; 
+}
+
+  #h2 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+  #h3 {
+    text-align: center;
+    color: white;
+  }
+  #h4 {
+    text-align: center;
+    color: white;
+  }
+  </style>
+</head>
+<body>
+  <div id="h2"> <h2>Oi amorzinho, você namora uma garota de programas, nada mais <br> justo do que um site pra você! 💗 </br></h2></div>
+
+  <div class="container-imagens">
+  <div class="imagem1">
+    <img src="imagem1.jpeg" alt="Nós dois" />
+  </div>
+  <div class="imagem2">
+    <img src="imagem2.jpeg" alt="Nós dois" />
+  </div>
+</div>
+
+  <div id="h3"><h2>Começamos nossa história há: </h2></div>
+
+  <div id="contador">
+    <button><div id="meses"></div></button>
+    <button><div id="dias"></div></button>
+    <button><div id="horas"></div></button>
+    <button><div id="minutos"></div></button>
+    <button><div id="segundos"></div></button>
+  </div>
+
+  <script>
+    function atualizarContador() {
+      const dataInicio = new Date('2025-08-01T00:00:00');
+      const agora = new Date();
+
+      let diffMs = agora - dataInicio;
+
+      if (diffMs < 0) {
+        document.getElementById('contador').innerHTML = 'A data ainda não chegou!';
+        return;
+      }
+
+      let segundosTotais = Math.floor(diffMs / 1000);
+      let minutos = Math.floor(segundosTotais / 60);
+      let horas = Math.floor(minutos / 60);
+      let dias = Math.floor(horas / 24);
+      let meses = Math.floor(dias / 30.44);
+
+      let segundos = segundosTotais % 60;
+      let minutosRestantes = minutos % 60;
+      let horasRestantes = horas % 24;
+      let diasRestantes = Math.floor(dias % 30.44);
+
+      document.getElementById('meses').innerText = meses + " meses"; 
+      document.getElementById('dias').innerText = diasRestantes + " dias";
+      document.getElementById('horas').innerText = horasRestantes + " horas";
+      document.getElementById('minutos').innerText = minutosRestantes + " minutos";
+      document.getElementById('segundos').innerText = segundos + " segundos";
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+  </script>
+  <div id="h4"><h3>Espero que esse temporizador conte anos e anos ao seu lado, que possamos viver uma vida muito feliz juntos, eu te amo!</h3></div>
+</body>
+</html>

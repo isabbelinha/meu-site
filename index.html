@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Você me ama?</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background:linear-gradient(rgb(7, 9, 122), black);
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 50px;
+    }
+
+    .botoes {
+  position: relative; /* vira referência pro botão "não" */
+  width: 200px;       /* largura do espaço que vai segurar os botões */
+  height: 60px;       /* altura inicial */
+}
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #sim {
+      background-color: #744160;
+      color: white;
+    }
+
+   #nao {
+  background-color: #621386;
+  color: white;
+  position: absolute;
+  left: 100px;  /* posição inicial do botão */
+  top: 0px;
+}
+  </style>
+</head>
+<body>
+  <h1>Você me ama?</h1>
+  <div class="botoes">
+    <button id="sim" onclick="window.location.href='isa.html'">SIM</button>
+    <button id="nao">Claro que sim!</button>
+  </div>
+
+
+</body>
+</html>
